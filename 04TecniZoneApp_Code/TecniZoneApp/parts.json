@@ -1,0 +1,9 @@
+[
+  {
+    "partId": "15",
+    "partName": "Ram",
+    "stockQuantity": 15,
+    "minimumStock": 3,
+    "unitPrice": 15.0
+  }
+]
