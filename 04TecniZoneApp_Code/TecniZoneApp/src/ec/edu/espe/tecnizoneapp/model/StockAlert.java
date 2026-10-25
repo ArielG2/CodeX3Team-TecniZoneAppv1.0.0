@@ -12,4 +12,8 @@ public class StockAlert {
     Date triggerDate;
     String alertMessage;
     boolean isResolved;
+
+    StockAlert(String string, Part aThis, Date date, String string0, boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
