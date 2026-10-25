@@ -1,9 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ec.edu.espe.tecnizoneapp.model;
 
+import java.time.LocalDateTime;
 /**
  *
  * @author Stalyn Guerrero, CodeX3Team, @ESPE
@@ -99,10 +96,12 @@ public class Part {
     }
     
     public void reduceStock(int quantityUsed) {
-        if (this.stockQuantity >= quantityUsed) {
+        if (quantityUsed <= 0) {
+            System.out.println("Error: La cantidad debe ser positiva.");
+        } else if (this.stockQuantity >= quantityUsed) {
             this.stockQuantity -= quantityUsed;
         } else {
-            System.out.println("Error: Stock insuficiente.");
+         System.out.println("Error: Stock insuficiente.");
         }
     }
     
@@ -112,15 +111,14 @@ public class Part {
     
     public StockAlert checkMinimumStock() {
         if (this.stockQuantity <= this.minimumStock) {
-            return new StockAlert("ALERT-" + this.partId, this, new java.util.Date(), 
-                                  "Stock bajo para la pieza: " + this.partName, false);
+            return new StockAlert(
+                    "ALERT-" + this.partId,
+                    this,
+                    LocalDateTime.now(),
+                    "Stock bajo para la pieza: " + this.partName,
+                    false
+            );
         }
         return null;
     }
-    
-    /*pendiente revisar
-    public String getPartName() {
-        return this.partName;
-    }
-    */
 }
