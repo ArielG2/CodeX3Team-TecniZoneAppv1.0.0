@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 /**
  *
- * @author Ariel Giler, CodeX3Team, @ESPE
+ * @author Lesly Muzo, CodeX3Team, @ESPE
  */
 public class Invoice {
 
