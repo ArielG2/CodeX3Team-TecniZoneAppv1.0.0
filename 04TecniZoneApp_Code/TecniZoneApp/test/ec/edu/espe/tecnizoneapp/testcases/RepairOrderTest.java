@@ -1,5 +1,8 @@
-package ec.edu.espe.tecnizoneapp.model;
+package ec.edu.espe.tecnizoneapp.testcases;
 
+import ec.edu.espe.tecnizoneapp.model.Invoice;
+import ec.edu.espe.tecnizoneapp.model.RepairOrder;
+import ec.edu.espe.tecnizoneapp.model.Technician;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.time.LocalDate;

@@ -1,5 +1,6 @@
-package ec.edu.espe.tecnizoneapp.model;
+package ec.edu.espe.tecnizoneapp.testcases;
 
+import ec.edu.espe.tecnizoneapp.model.ServiceCatalog;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

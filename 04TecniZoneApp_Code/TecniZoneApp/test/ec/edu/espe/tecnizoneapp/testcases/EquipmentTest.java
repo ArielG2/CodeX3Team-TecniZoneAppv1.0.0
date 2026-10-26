@@ -1,5 +1,8 @@
-package ec.edu.espe.tecnizoneapp.model;
+package ec.edu.espe.tecnizoneapp.testcases;
 
+import ec.edu.espe.tecnizoneapp.model.Client;
+import ec.edu.espe.tecnizoneapp.model.Equipment;
+import ec.edu.espe.tecnizoneapp.model.WarrantyChecklist;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

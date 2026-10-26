@@ -5,22 +5,22 @@
         <group>
             <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/src/ec/edu/espe/tecnizoneapp/model/DirectSale.java</file>
             <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/src/ec/edu/espe/tecnizoneapp/model/Part.java</file>
-            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/DirectSaleTest.java</file>
-            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/OrderPartDetailTest.java</file>
-            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/RepairOrderTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/testcases/DirectSaleTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/testcases/OrderPartDetailTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/testcases/RepairOrderTest.java</file>
             <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/src/ec/edu/espe/tecnizoneapp/model/Client.java</file>
-            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/ClientTest.java</file>
-            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/EquipmentTest.java</file>
-            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/InvoiceTest.java</file>
-            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/MonthlyReportTest.java</file>
-            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/PartTest.java</file>
-            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/ServiceCatalogTest.java</file>
-            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/StatusLogTest.java</file>
-            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/StockAlertTest.java</file>
-            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/SupplierTest.java</file>
-            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/SystemUserTest.java</file>
-            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/TechnicianTest.java</file>
-            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/WarrantyChecklistTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/testcases/ClientTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/testcases/EquipmentTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/testcases/InvoiceTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/testcases/MonthlyReportTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/testcases/PartTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/testcases/ServiceCatalogTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/testcases/StatusLogTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/testcases/StockAlertTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/testcases/SupplierTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/testcases/SystemUserTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/testcases/TechnicianTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/ProyectoOOP/CodeX3Team-TecniZoneAppv1.0.0/04TecniZoneApp_Code/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/testcases/WarrantyChecklistTest.java</file>
         </group>
     </open-files>
 </project-private>

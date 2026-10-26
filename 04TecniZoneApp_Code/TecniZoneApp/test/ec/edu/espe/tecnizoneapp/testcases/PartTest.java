@@ -1,5 +1,7 @@
-package ec.edu.espe.tecnizoneapp.model;
+package ec.edu.espe.tecnizoneapp.testcases;
 
+import ec.edu.espe.tecnizoneapp.model.Part;
+import ec.edu.espe.tecnizoneapp.model.StockAlert;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
