@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
- */
 package ec.edu.espe.tecnizoneapp.model;
 
 import org.junit.Test;
@@ -16,8 +12,6 @@ public class PartTest {
     
     public PartTest() {
     }
-
-
 
     @Test
     public void testPartConstructorAndGetters() {
@@ -100,7 +94,6 @@ public class PartTest {
 
         Part part = new Part("PRT-009", "Memoria RAM", 10, 2, 60.00);
         
-        // Forzamos el fallo esperando 999.0 cuando el real es 60.0
         assertEquals(999.00, part.getUnitPrice(), 0.01);
     }
 

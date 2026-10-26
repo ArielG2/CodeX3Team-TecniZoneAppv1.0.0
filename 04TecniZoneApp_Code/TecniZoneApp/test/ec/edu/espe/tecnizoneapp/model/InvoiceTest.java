@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
- */
 package ec.edu.espe.tecnizoneapp.model;
 
 import org.junit.Test;
@@ -97,7 +93,6 @@ public class InvoiceTest {
     public void testInvoice_IntentionalFailureNumber() {
         Invoice invoice = new Invoice("INV-009", null, LocalDateTime.now(), 50.00, "Cash");
         
-        // Forzamos el fallo esperando "INV-WRONG" cuando el real es "INV-009"
         assertEquals("INV-WRONG", invoice.getInvoiceNumber());
     }
 

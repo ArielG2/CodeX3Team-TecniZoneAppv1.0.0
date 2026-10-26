@@ -1,8 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
- */
-
 package ec.edu.espe.tecnizoneapp.model;
 
 import org.junit.Test;
@@ -94,7 +89,6 @@ public class EquipmentTest {
         Client client = new Client("C001", "Stalyn Guerrero", "0911111111", "TecniZone");
         Equipment equipment = new Equipment("SN-008", "Laptop", "HP", "ProBook", "Ninguna", client);
         
-
         assertEquals("Apple", equipment.getBrand());
     }
 
@@ -111,7 +105,6 @@ public class EquipmentTest {
         Client client = new Client("C001", "Stalyn Guerrero", "0911111111", "TecniZone");
         Equipment equipment = new Equipment("SN-010", "Router", "TP-Link", "Archer", "Sin internet", client);
         
-        // Forzamos el fallo esperando "SN-000" cuando el real es "SN-010"
         assertEquals("SN-000", equipment.getSerialNumber());
     }
 }

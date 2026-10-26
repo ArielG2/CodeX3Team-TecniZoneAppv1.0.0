@@ -83,7 +83,6 @@ public class Client {
     }
     
     public Equipment registerEquipment(String deviceDetails) {
-        // Se puede registrar un equipo asociado a este cliente con datos por defecto
         return new Equipment("SN-DEFAULT", deviceDetails, "Desconocida", "Desconocido", "Sin fallas reportadas", this);
     }
     

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
- */
 package ec.edu.espe.tecnizoneapp.model;
 
 import org.junit.Test;
@@ -49,7 +45,7 @@ public class OrderPartDetailTest {
     public void testSetOrder_Success() {
 
         OrderPartDetail detail = new OrderPartDetail("DET-004", null, null, 1, 30.0);
-        RepairOrder dummyOrder = new RepairOrder();
+        RepairOrder dummyOrder = new RepairOrder("ORD-001", null, null, null, "Under Diagnosis", java.time.LocalDate.now(), 0.0, 0.0, 0.0);
         detail.setOrder(dummyOrder);
         
         assertNotNull(detail.getOrder());
@@ -59,7 +55,7 @@ public class OrderPartDetailTest {
     public void testSetUsedPart_Success() {
 
         OrderPartDetail detail = new OrderPartDetail("DET-005", null, null, 2, 40.0);
-        Part dummyPart = new Part();
+        Part dummyPart = new Part("P-001", "Pantalla LCD", 5, 3, 25.0);
         detail.setUsedPart(dummyPart);
         
         assertNotNull(detail.getUsedPart());
@@ -94,8 +90,6 @@ public class OrderPartDetailTest {
     public void testOrderPartDetail_IntentionalFailureQuantity() {
 
         OrderPartDetail detail = new OrderPartDetail("DET-009", null, null, 5, 100.0);
-        
-        // Forzamos el fallo esperando 50 unidades cuando la real es 5
         assertEquals(50, detail.getQuantityUsed());
     }
 

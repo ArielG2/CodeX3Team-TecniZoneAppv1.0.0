@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
- */
 package ec.edu.espe.tecnizoneapp.model;
 
 import org.junit.Test;
@@ -109,7 +105,6 @@ public class MonthlyReportTest {
     public void testMonthlyReport_IntentionalFailureRepairs() {
         System.out.println("Falla 2: Esperar una cantidad de reparaciones incorrecta para forzar error");
         MonthlyReport report = new MonthlyReport("REP-010", "October 2026", 14, 1400.0);
-        
 
         assertEquals(50, report.getTotalCompletedRepairs());
     }

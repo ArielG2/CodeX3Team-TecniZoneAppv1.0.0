@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
- */
 package ec.edu.espe.tecnizoneapp.model;
 
 import org.junit.Test;
@@ -89,10 +85,7 @@ public class ServiceCatalogTest {
         
         assertNotNull(service.toString());
     }
-
-
-
-
+    
     @Test
     public void testServiceCatalog_IntentionalFailureCost() {
 

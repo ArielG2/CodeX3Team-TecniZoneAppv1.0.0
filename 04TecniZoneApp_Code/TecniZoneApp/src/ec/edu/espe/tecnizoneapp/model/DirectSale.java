@@ -12,9 +12,9 @@ public class DirectSale {
     private String saleId;
     private LocalDateTime saleDate;
     private double totalAmount;
+    private Client client;
 
-    public DirectSale(String saleId, LocalDateTime saleDate,
-            double totalAmount) {
+    public DirectSale(String saleId, LocalDateTime saleDate, double totalAmount) {
         this.saleId = saleId;
         this.saleDate = saleDate;
         this.totalAmount = totalAmount;
@@ -76,23 +76,11 @@ public class DirectSale {
                 + ", totalAmount=" + totalAmount + '}';
     }
 
-    void setClient(Client client) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void setClient(Client client) {
+        this.client = client;
     }
 
-    void setClient(Client client) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    Object getClient() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    Object getClient() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    Object getClient() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Client getClient() {
+        return client;
     }
 }
