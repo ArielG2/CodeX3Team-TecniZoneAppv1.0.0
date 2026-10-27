@@ -1,0 +1,6 @@
+========== Reporte Mensual ==========
+ID Del Reporte: REP-2026-10
+Mes y Anio: Octubre 2026
+Reparaciones Completadas: 0
+Dinero Recolectado: $0.0
+====================================
