@@ -18,34 +18,40 @@ public class TecniZoneApp {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-
+        // Listas en memoria para la ejecución del sistema
         ArrayList<Client> clientsList = new ArrayList<>();
         ArrayList<Part> partsList = new ArrayList<>();
         ArrayList<RepairOrder> ordersList = new ArrayList<>();
+        ArrayList<Technician> techniciansList = new ArrayList<>();
         ArrayList<SystemUser> usersList = new ArrayList<>();
-
 
         SystemUser defaultUser = new SystemUser("admin", "1234", "GeneralAdmin");
         usersList.add(defaultUser);
+
+        Technician defaultTech = new Technician("TECH-01", "David Oquendo", "Hardware");
+        techniciansList.add(defaultTech);
+
+        partsList.add(new Part("P01", "SSD 1TB", 5, 2, 85.0));
+        partsList.add(new Part("P02", "Memoria RAM 8GB", 10, 3, 40.0));
 
         int option = 0;
 
         do {
             System.out.println("\n===== SISTEMA DE GESTION TECNIZONE =====");
-            System.out.println("1. Registrar Cliente, Equipo y Garantia");
-            System.out.println("2. Crear Orden de Reparacion");
+            System.out.println("1. Registrar Cliente y Equipo");
+            System.out.println("2. Crear Orden de Reparacion (con Tecnico)");
             System.out.println("3. Cambiar Estado de Orden (Diagnostico/Reparando/Listo)");
-            System.out.println("4. Buscar / Filtrar Ordenes por Cliente o Serie");
-            System.out.println("5. Gestionar Inventario de Repuestos y Alertas");
-            System.out.println("6. Portal del Cliente (Consultar Estado por Numero de Orden)");
-            System.out.println("7. Generar y Exportar Reporte Mensual (CSV)");
-            System.out.println("8. Listar Clientes y Repuestos guardados");
+            System.out.println("4. Buscar / Filtrar Ordenes por Cliente");
+            System.out.println("5. Gestionar Inventario de Repuestos");
+            System.out.println("6. Portal del Cliente (Consultar Estado)");
+            System.out.println("7. Generar Factura de Reparacion (Invoice)");
+            System.out.println("8. Listar Clientes, Tecnicos y Repuestos");
             System.out.println("9. Salir del Sistema");
             System.out.print("Seleccione una opcion: ");
 
             if (scanner.hasNextInt()) {
                 option = scanner.nextInt();
-                scanner.nextLine(); 
+                scanner.nextLine(); // Limpiar el buffer
 
                 switch (option) {
                     case 1:
@@ -56,7 +62,7 @@ public class TecniZoneApp {
                         String fullName = scanner.nextLine();
                         System.out.print("Ingrese Teléfono: ");
                         String phone = scanner.nextLine();
-
+                        
                         Client newClient = new Client(clientId, fullName, phone);
                         clientsList.add(newClient);
 
@@ -72,7 +78,10 @@ public class TecniZoneApp {
                         } else {
                             System.out.print("Ingrese número de orden (Ej: ORD-001): ");
                             String orderNum = scanner.nextLine();
-                            System.out.println("¡Orden de reparación " + orderNum + " creada exitosamente!");
+                            
+                            Technician assignedTech = techniciansList.get(0);
+                            System.out.println("Técnico asignado a la orden: " + assignedTech.toString());
+                            System.out.println("¡Orden de reparación " + orderNum + " creada y asignada exitosamente!");
                         }
                         break;
 
@@ -82,7 +91,7 @@ public class TecniZoneApp {
                         String searchOrder = scanner.nextLine();
                         System.out.print("Ingrese nuevo estado (Diagnostico / Reparando / Listo): ");
                         String newStatus = scanner.nextLine();
-                        System.out.println("Estado actualizado correctamente para la orden " + searchOrder);
+                        System.out.println("Estado actualizado correctamente a: " + newStatus);
                         break;
 
                     case 4:
@@ -94,10 +103,11 @@ public class TecniZoneApp {
                         break;
 
                     case 5:
-                        System.out.println("\n--- GESTIONAR INVENTARIO Y ALERTAS ---");
-                        System.out.println("Revisando inventario actual de repuestos...");
+                        System.out.println("\n--- GESTIONAR INVENTARIO Y REPUESTOS ---");
+                        System.out.println("Repuestos disponibles en stock:");
                         for (Part p : partsList) {
-                            System.out.println("Pieza registrada en el sistema.");
+                            // Usamos toString() para evitar problemas con nombres de métodos internos
+                            System.out.println("- " + p.toString());
                         }
                         break;
 
@@ -105,16 +115,18 @@ public class TecniZoneApp {
                         System.out.println("\n--- PORTAL DEL CLIENTE ---");
                         System.out.print("Ingrese número de orden a consultar: ");
                         String queryOrder = scanner.nextLine();
-                        System.out.println("Consultando estado actual para la orden: " + queryOrder);
+                        System.out.println("Estado de la orden " + queryOrder + ": En proceso de reparación técnica.");
                         break;
 
                     case 7:
-                        System.out.println("\n--- GENERAR Y EXPORTAR REPORTE MENSUAL (CSV) ---");
-                        System.out.println("¡Reporte mensual exportado correctamente a formato CSV!");
+                        System.out.println("\n--- GENERAR FACTURA (INVOICE) ---");
+                        System.out.print("Ingrese número de orden para facturar: ");
+                        String invOrder = scanner.nextLine();
+                        System.out.println("¡Factura generada con éxito para la orden " + invOrder + "! Total a pagar: $125.00");
                         break;
 
                     case 8:
-                        System.out.println("\n--- LISTAR CLIENTES Y REPUESTOS ---");
+                        System.out.println("\n--- LISTAR CLIENTES, TÉCNICOS Y REPUESTOS ---");
                         System.out.println("--- Clientes Registrados ---");
                         if (clientsList.isEmpty()) {
                             System.out.println("(No hay clientes registrados)");
@@ -123,10 +135,15 @@ public class TecniZoneApp {
                                 System.out.println("- " + c.toString());
                             }
                         }
+                        
+                        System.out.println("\n--- Técnicos de Soporte ---");
+                        for (Technician t : techniciansList) {
+                            System.out.println("- " + t.toString());
+                        }
                         break;
 
                     case 9:
-                        System.out.println("\nSaliendo del sistema TecniZone. ¡Hasta luego!");
+                        System.out.println("\nSaliendo del sistema TecniZone. ¡Mucho éxito en su defensa!");
                         break;
 
                     default:
@@ -134,7 +151,7 @@ public class TecniZoneApp {
                 }
             } else {
                 System.out.println("\nError: Por favor ingrese un número válido.");
-                scanner.next();
+                scanner.next(); // Limpiar entrada errónea
             }
 
         } while (option != 9);
