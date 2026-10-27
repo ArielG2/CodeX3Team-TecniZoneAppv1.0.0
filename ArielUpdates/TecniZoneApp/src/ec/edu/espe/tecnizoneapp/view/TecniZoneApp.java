@@ -18,13 +18,13 @@ public class TecniZoneApp {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Listas en memoria para la ejecución del sistema
+
         ArrayList<Client> clientsList = new ArrayList<>();
         ArrayList<Part> partsList = new ArrayList<>();
         ArrayList<RepairOrder> ordersList = new ArrayList<>();
         ArrayList<SystemUser> usersList = new ArrayList<>();
 
-        // Usuario por defecto para bitácoras y cambios de estado
+
         SystemUser defaultUser = new SystemUser("admin", "1234", "GeneralAdmin");
         usersList.add(defaultUser);
 
@@ -45,7 +45,7 @@ public class TecniZoneApp {
 
             if (scanner.hasNextInt()) {
                 option = scanner.nextInt();
-                scanner.nextLine(); // Limpiar el buffer
+                scanner.nextLine(); 
 
                 switch (option) {
                     case 1:
@@ -56,8 +56,7 @@ public class TecniZoneApp {
                         String fullName = scanner.nextLine();
                         System.out.print("Ingrese Teléfono: ");
                         String phone = scanner.nextLine();
-                        
-                        // Corregido a 3 parámetros exactos que pide la clase Client
+
                         Client newClient = new Client(clientId, fullName, phone);
                         clientsList.add(newClient);
 
@@ -135,7 +134,7 @@ public class TecniZoneApp {
                 }
             } else {
                 System.out.println("\nError: Por favor ingrese un número válido.");
-                scanner.next(); // Limpiar entrada errónea
+                scanner.next();
             }
 
         } while (option != 9);
