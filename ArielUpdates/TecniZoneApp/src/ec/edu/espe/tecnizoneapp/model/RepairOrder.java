@@ -40,7 +40,7 @@ public class RepairOrder {
  
         this.partsCost += detail.getSubtotal();
        
-        part.reduceStock(quantity);
+        part.decreaseStock(quantity);
         
         System.out.println("Pieza " + quantity + " agregada a la orden. Subtotal: $" + detail.getSubtotal());
         return detail;

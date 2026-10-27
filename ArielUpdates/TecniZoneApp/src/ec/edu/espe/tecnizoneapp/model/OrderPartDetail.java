@@ -11,12 +11,12 @@ public class OrderPartDetail {
     private int quantityUsed;
     private double subtotal;
 
-    public OrderPartDetail(String detailId, RepairOrder order, Part usedPart, int quantityUsed, double subtotal) {
+    public OrderPartDetail(String detailId, RepairOrder order, Part usedPart, int quantityUsed) {
         this.detailId = detailId;
         this.order = order;
         this.usedPart = usedPart;
         this.quantityUsed = quantityUsed;
-        this.subtotal = subtotal;
+        this.subtotal = (usedPart != null) ? quantityUsed * usedPart.getPrice() : 0.0;
     }
 
     public double calculateSubtotal() {

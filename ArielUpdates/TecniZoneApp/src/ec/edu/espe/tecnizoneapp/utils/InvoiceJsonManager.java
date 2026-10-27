@@ -6,7 +6,7 @@ import java.io.FileWriter;
 
 /**
  *
- * @author Ariel Giler, CodeX3Team, @ESPE
+ * @author Stalyn Guerrero, CodeX3Team, @ESPE
  */
 public class InvoiceJsonManager {
 
