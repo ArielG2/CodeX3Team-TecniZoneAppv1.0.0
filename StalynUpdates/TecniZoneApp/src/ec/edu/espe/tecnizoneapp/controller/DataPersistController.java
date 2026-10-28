@@ -24,7 +24,7 @@ public class DataPersistController {
                 if (!line.isEmpty()) {
                     JSONObject json = new JSONObject(line);
                     clients.add(new Client(
-                        json.optString("idCard", "N/A"),
+                        json.optString("ClientId", "N/A"),
                         json.optString("fullName", "N/A"),
                         json.optString("phoneNumber", "N/A")
                     ));
@@ -66,6 +66,24 @@ public class DataPersistController {
             }
         } catch (Exception e) {
             System.out.println(">> Error al limpiar " + filename + ": " + e.getMessage());
+        }
+    }
+
+    public void displayRawFileContent(String filename) {
+        File file = new File(filename);
+        System.out.println("\n===== CONTENIDO DEL ARCHIVO: " + filename + " =====");
+        if (!file.exists() || file.length() == 0) {
+            System.out.println("(El archivo no existe o está vacío)");
+            return;
+        }
+
+        try (Scanner reader = new Scanner(file)) {
+            int lineNum = 1;
+            while (reader.hasNextLine()) {
+                System.out.println("[" + lineNum++ + "] " + reader.nextLine());
+            }
+        } catch (Exception e) {
+            System.out.println(">> Error al leer el archivo " + filename + ": " + e.getMessage());
         }
     }
 }

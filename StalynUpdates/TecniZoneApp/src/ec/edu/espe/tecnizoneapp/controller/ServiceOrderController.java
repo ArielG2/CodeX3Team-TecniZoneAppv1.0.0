@@ -21,11 +21,11 @@ public class ServiceOrderController {
 
     public void registerClientAndEquipment(ArrayList<Client> clients) {
         System.out.println("\n--- REGISTRO DE CLIENTE Y EQUIPO ---");
-        System.out.print("ID / Cédula del Cliente: ");
+        System.out.print("ID / Cedula del Cliente: ");
         String id = scanner.nextLine();
         System.out.print("Nombre Completo: ");
         String name = scanner.nextLine();
-        System.out.print("Teléfono: ");
+        System.out.print("Telefono: ");
         String phone = scanner.nextLine();
 
         Client client = new Client(id, name, phone);
@@ -38,13 +38,13 @@ public class ServiceOrderController {
         String brand = scanner.nextLine();
         System.out.print("Modelo: ");
         String model = scanner.nextLine();
-        System.out.print("Número de Serie: ");
+        System.out.print("Numero de Serie: ");
         String serialNumber = scanner.nextLine();
 
         Equipment equipment = new Equipment("EQ-" + id, deviceType, brand, model, serialNumber, client);
         EquipmentJsonManager.save(equipment);
 
-        System.out.println(">> Cliente y Equipo registrados con éxito.");
+        System.out.println(">> Cliente y Equipo registrados con exito.");
     }
 
     public void createRepairOrder(ArrayList<Client> clients, ArrayList<Technician> technicians, ArrayList<RepairOrder> orders) {
@@ -52,7 +52,7 @@ public class ServiceOrderController {
             System.out.println(">> Error: Registre al menos un cliente primero.");
             return;
         }
-        System.out.print("Número de Orden (Ej: ORD-001): ");
+        System.out.print("Numero de Orden (Ej: ORD-001): ");
         String num = scanner.nextLine();
 
         Client client = clients.get(0);
@@ -68,7 +68,7 @@ public class ServiceOrderController {
     }
 
     public void updateOrderStatus(ArrayList<RepairOrder> orders, SystemUser user) {
-        System.out.print("Número de orden a actualizar: ");
+        System.out.print("Numero de orden a actualizar: ");
         String num = scanner.nextLine();
         System.out.print("Nuevo Estado: ");
         String status = scanner.nextLine();
@@ -85,9 +85,9 @@ public class ServiceOrderController {
     }
 
     public void searchOrders(ArrayList<RepairOrder> orders) {
-        System.out.println("\n--- ÓRDENES DE REPARACIÓN REGISTRADAS ---");
+        System.out.println("\n--- ORDENES DE REPARACION REGISTRADAS ---");
         if (orders.isEmpty()) {
-            System.out.println("(No hay órdenes registradas)");
+            System.out.println("(No hay ordenes registradas)");
             return;
         }
         for (RepairOrder o : orders) {
@@ -96,7 +96,7 @@ public class ServiceOrderController {
     }
 
     public void customerPortal(ArrayList<RepairOrder> orders) {
-        System.out.print("Ingrese número de orden a consultar: ");
+        System.out.print("Ingrese numero de orden a consultar: ");
         String num = scanner.nextLine();
         RepairOrder o = findOrder(orders, num);
         if (o != null) {
@@ -120,7 +120,7 @@ public class ServiceOrderController {
     }
 
     public void deleteSingleOrder(ArrayList<RepairOrder> orders) {
-        System.out.print("Número de orden a eliminar: ");
+        System.out.print("Numero de orden a eliminar: ");
         String num = scanner.nextLine();
 
         if (orders.removeIf(o -> o.getOrderNumber().equalsIgnoreCase(num))) {

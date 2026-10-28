@@ -21,7 +21,7 @@ public class Part {
 
     @Override
     public String toString() {
-        return "Part{" + "code=" + getCode() + ", name=" + getName() + ", currentStock=" + getCurrentStock() + ", minStock=" + getMinStock() + ", price=" + getPrice() + '}';
+        return "Part{" + "Codigo=" + getCode() + ", Nombre=" + getName() + ", CurrentStock=" + getCurrentStock() + ", MinStock=" + getMinStock() + ", Precio=" + getPrice() + '}';
     }
 
     /**

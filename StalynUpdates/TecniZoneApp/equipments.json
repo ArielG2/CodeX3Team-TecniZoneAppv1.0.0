@@ -1,1 +1,9 @@
-{"deviceType":"Laptop","reportedFaults":"dfc400","ownerClientId":"001","serialNumber":"EQ-001","model":"Presision","brand":"Dell"}
+{"reportedFaults":"xxxx123567","deviceType":"asus tuf gaming a15","serialNumber":"EQ-1023578910","ownerClient":{"clientId":"1023578910","phoneNumber":"0989859323","fullName":"Stalyn Guerrero"},"model":"a15","brand":"Asus"}
+{"deviceType":"Laptop","reportedFaults":"XXXX4570","serialNumber":"EQ-001","ownerClient":{"clientId":"001","phoneNumber":"0989859323","fullName":"Stalyn Guerrero"},"model":"A15","brand":"ASUS"}
+{"reportedFaults":"XXX6700","deviceType":"Laptop","serialNumber":"EQ-001","ownerClient":{"clientId":"001","phoneNumber":"0989859323","fullName":"Stalyn Guerrero"},"model":"A15","brand":"ASUS TUF"}
+{"deviceType":"Laptop","reportedFaults":"XXXX456890","serialNumber":"EQ-001","ownerClient":{"clientId":"001","phoneNumber":"0989859323","fullName":"Stalyn Guerrero"},"model":"A15","brand":"ASUS TUF"}
+{"deviceType":"Laptop","reportedFaults":"XXXD-0045","serialNumber":"EQ-001","ownerClient":{"phoneNumber":"0989859323","clientId":"001","fullName":"Stalyn Guerrero"},"model":"TUF A15","brand":"ASUS"}
+{"deviceType":"Laptop","reportedFaults":"XXX9086","serialNumber":"EQ-001","ownerClient":{"clientId":"001","phoneNumber":"0989859323","fullName":"Stalyn Guerrero"},"model":"A15","brand":"ASUS TUF"}
+{"deviceType":"Laptop","reportedFaults":"XXF - 45661","serialNumber":"EQ-1724672330","ownerClient":{"clientId":"1724672330","phoneNumber":"0989859323","fullName":"Stalyn Alexander Guerrero Loyola"},"model":"A15","brand":"ASUS TUF"}
+{"deviceType":"Laptop","reportedFaults":"XXXF45007","ownerClientId":"1724672330","serialNumber":"EQ-1724672330","model":"A15","brand":"ASUS"}
+{"deviceType":"Laptop","reportedFaults":"XXF0076","ownerClientId":"1724672330","serialNumber":"EQ-1724672330","model":"A15","brand":"ASUS TUF"}

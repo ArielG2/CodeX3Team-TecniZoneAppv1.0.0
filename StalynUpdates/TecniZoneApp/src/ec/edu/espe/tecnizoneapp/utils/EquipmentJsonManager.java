@@ -2,6 +2,7 @@ package ec.edu.espe.tecnizoneapp.utils;
 
 import ec.edu.espe.tecnizoneapp.model.Equipment;
 import org.json.JSONObject;
+import java.io.File;
 import java.io.FileWriter;
 
 /**
@@ -11,14 +12,25 @@ import java.io.FileWriter;
 public class EquipmentJsonManager {
 
     public static void save(Equipment equipment) {
+        JSONObject json = new JSONObject();
+        json.put("serialNumber", equipment.getSerialNumber());
+        json.put("deviceType", equipment.getDeviceType());
+        json.put("brand", equipment.getBrand());
+        json.put("model", equipment.getModel());
+        json.put("reportedFaults", equipment.getReportedFaults());
 
-        JSONObject json = new JSONObject(equipment);
+        if (equipment.getOwnerClient() != null) {
+            json.put("ownerClientId", equipment.getOwnerClient().getClientId());
+        }
 
-        try (FileWriter file = new FileWriter("equipments.json", true)) {
+        File fileObj = new File("C:\\Users\\Mateo\\Documents\\ObjectOrientedProgramming\\CodeX3Team-TecniZoneAppv1.0.0\\StalynUpdates\\TecniZoneApp\\equipments.json");
+
+        try (FileWriter file = new FileWriter(fileObj, true)) {
             file.write(json.toString() + "\n");
-            System.out.println(">> Equipo guardado en equipments.json");
+            file.flush(); 
+            System.out.println(">> Equipo guardado en: " + fileObj.getAbsolutePath());
         } catch (Exception e) {
-            System.out.println(">> Error al guardar: " + e.getMessage());
+            System.out.println(">> Error al guardar equipo: " + e.getMessage());
         }
     }
 }
