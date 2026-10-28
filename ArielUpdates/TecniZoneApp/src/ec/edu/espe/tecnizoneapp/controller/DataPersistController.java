@@ -24,7 +24,7 @@ public class DataPersistController {
                 if (!line.isEmpty()) {
                     JSONObject json = new JSONObject(line);
                     clients.add(new Client(
-                        json.optString("idCard", "N/A"),
+                        json.optString("ClientId", "N/A"),
                         json.optString("fullName", "N/A"),
                         json.optString("phoneNumber", "N/A")
                     ));
