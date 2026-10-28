@@ -23,7 +23,7 @@ public class MenuHandler {
             showMainMenu();
             option = readInt();
             processOption(option);
-        } while (option != 10);
+        } while (option != 11);
     }
 
     private void showMainMenu() {
@@ -32,12 +32,13 @@ public class MenuHandler {
         System.out.println("2. Crear Orden de Reparacion (PB-01 / PB-03)");
         System.out.println("3. Cambiar Estado de Orden & Log CSV (PB-02)");
         System.out.println("4. Buscar / Listar Ordenes Registradas (PB-08)");
-        System.out.println("5. Gestionar Inventario y Repuestos (PB-06)");
+        System.out.println("5. Gestionar Inventario de Repuestos (Ver, Agregar, Modificar Stock)");
         System.out.println("6. Portal del Cliente (PB-08)");
         System.out.println("7. Generar Factura de Reparacion (PB-07)");
         System.out.println("8. Eliminar UN Solo Registro (Cliente / Repuesto / Orden)");
         System.out.println("9. Vaciar Archivos Completos (Limpieza Total)");
-        System.out.println("10. Salir");
+        System.out.println("10. Consultar Informacion de Todos los Archivos (JSON / CSV)");
+        System.out.println("11. Salir");
         System.out.print("Seleccione una opcion: ");
     }
 
@@ -52,7 +53,8 @@ public class MenuHandler {
             case 7 -> controller.generateInvoice();
             case 8 -> showDeleteSingleMenu();
             case 9 -> showPurgeMenu();
-            case 10 -> System.out.println("\n>> Saliendo del sistema TecniZone...");
+            case 10 -> controller.viewAllSystemFilesMenu();
+            case 11 -> System.out.println("\n>> Saliendo del sistema TecniZone...");
             default -> System.out.println(">> Opcion invalida.");
         }
     }
