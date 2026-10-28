@@ -1,111 +1,105 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
+ */
 package ec.edu.espe.tecnizoneapp.testcases;
 
 import ec.edu.espe.tecnizoneapp.model.Part;
-import ec.edu.espe.tecnizoneapp.model.Supplier;
+import ec.edu.espe.tecnizoneapp.model.StockAlert;
+import java.time.LocalDateTime;
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
  *
- * @author Lesly Muzo, CodeX3Team, @ESPE
+ * @author Lesly   Muzo, CodeX3Team, @ESPE
  */
-public class SupplierTest {
-    
-    public SupplierTest() {
-    }
+public class StockAlertTest {
 
+    private StockAlert alert;
+    private Part samplePart;
+    private LocalDateTime sampleDate;
 
-    @Test
-    public void testSupplierConstructorAndGetters() {
-
-        Supplier supplier = new Supplier("SUP-001", "TechParts Ecuador", "0991234567");
-        
-        assertEquals("SUP-001", supplier.getSupplierId());
-        assertEquals("TechParts Ecuador", supplier.getCompanyName());
-        assertEquals("0991234567", supplier.getContactPhone());
-    }
-
-    @Test
-    public void testSetCompanyName_Success() {
-
-        Supplier supplier = new Supplier("SUP-002", "Global Tech", "0987654321");
-        supplier.setCompanyName("Global Tech S.A.");
-        
-        assertEquals("Global Tech S.A.", supplier.getCompanyName());
+    @Before
+    public void setUp() {
+        samplePart = new Part("P001", "Pantalla LED", 10, 2, 50.0);
+        sampleDate = LocalDateTime.of(2026, 6, 1, 10, 30);
+        alert = new StockAlert("ALERT-001", samplePart, sampleDate,
+                "Stock bajo para la pieza: Pantalla LED", false);
     }
 
     @Test
-    public void testSetContactPhone_Success() {
-
-        Supplier supplier = new Supplier("SUP-003", "Importadora XYZ", "0955555555");
-        supplier.setContactPhone("0999999999");
-        
-        assertEquals("0999999999", supplier.getContactPhone());
+    public void testConstructorAndGetters() {
+        assertEquals("ALERT-001", alert.getAlertId());
+        assertEquals(samplePart, alert.getAffectedPart());
+        assertEquals(sampleDate, alert.getTriggerDate());
+        assertEquals("Stock bajo para la pieza: Pantalla LED", alert.getAlertMessage());
+        assertFalse(alert.getIsResolved());
     }
 
     @Test
-    public void testOrderParts_ExecutionSuccess() {
-
-        Supplier supplier = new Supplier("SUP-004", "Distribuidora Central", "0933333333");
-        Part samplePart = new Part("PRT-999", "Pantalla OLED", 10, 2, 100.0);
-
-        try {
-            supplier.orderParts(samplePart, 5);
-            assertTrue(true);
-        } catch (Exception e) {
-            fail("El método orderParts no debería fallar con datos válidos.");
-        }
+    public void testSetAlertId() {
+        alert.setAlertId("ALERT-002");
+        assertEquals("ALERT-002", alert.getAlertId());
     }
 
     @Test
-    public void testSupplier_NotNullInstance() {
-
-        Supplier supplier = new Supplier("SUP-005", "ElectroComponentes", "0922222222");
-        
-        assertNotNull(supplier);
-        assertNotNull(supplier.getSupplierId());
+    public void testSetAffectedPart() {
+        Part newPart = new Part("P002", "Bateria", 5, 1, 30.0);
+        alert.setAffectedPart(newPart);
+        assertEquals(newPart, alert.getAffectedPart());
     }
 
     @Test
-    public void testSupplier_IdNotEqualsWrong() {
-
-        Supplier supplier = new Supplier("SUP-006", "NetCom", "0911111111");
-        
-        assertNotEquals("SUP-000", supplier.getSupplierId());
+    public void testSetTriggerDate() {
+        LocalDateTime newDate = LocalDateTime.of(2026, 6, 2, 12, 0);
+        alert.setTriggerDate(newDate);
+        assertEquals(newDate, alert.getTriggerDate());
     }
 
     @Test
-    public void testToString_ContainsCompanyName() {
-
-        Supplier supplier = new Supplier("SUP-007", "MegaParts", "0944444444");
-        String resultString = supplier.toString();
-        
-        assertNotNull(resultString);
-        assertTrue(resultString.contains("MegaParts"));
+    public void testSetAlertMessage() {
+        alert.setAlertMessage("Stock critico");
+        assertEquals("Stock critico", alert.getAlertMessage());
     }
 
     @Test
-    public void testSetSupplierId_Success() {
-
-        Supplier supplier = new Supplier("SUP-008", "AlphaTech", "0966666666");
-        supplier.setSupplierId("SUP-888");
-        
-        assertEquals("SUP-888", supplier.getSupplierId());
+    public void testSetIsResolved() {
+        alert.setIsResolved(true);
+        assertTrue(alert.getIsResolved());
     }
 
     @Test
-    public void testSupplier_IntentionalFailureCompanyName() {
-
-        Supplier supplier = new Supplier("SUP-009", "Inversiones Tecnológicas", "0977777777");
-
-        assertEquals("Ferretería Industrial", supplier.getCompanyName());
+    public void testMarkAsResolvedSetsTrue() {
+        alert.markAsResolved(null);
+        assertTrue(alert.getIsResolved());
     }
 
     @Test
-    public void testSupplier_IntentionalFailurePhone() {
+    public void testMarkAsResolvedKeepsOtherFields() {
+        alert.markAsResolved(null);
+        assertEquals("ALERT-001", alert.getAlertId());
+        assertEquals(samplePart, alert.getAffectedPart());
+        assertEquals("Stock bajo para la pieza: Pantalla LED", alert.getAlertMessage());
+    }
 
-        Supplier supplier = new Supplier("SUP-010", "Servicios Express", "0988888888");
-        
-        assertEquals("0900000000", supplier.getContactPhone());
+    @Test
+    public void testToStringFormat() {
+        String result = alert.toString();
+        assertTrue(result.contains("ALERT-001"));
+        assertTrue(result.contains("Pantalla LED"));
+        assertTrue(result.contains("isResolved=false"));
+    }
+
+    @Test
+    public void testAlertGeneratedByPartCheckMinimumStock() {
+        samplePart.setStockQuantity(2);
+        StockAlert generated = samplePart.checkMinimumStock();
+        assertNotNull(generated);
+        assertEquals("ALERT-P001", generated.getAlertId());
+        assertEquals(samplePart, generated.getAffectedPart());
+        assertFalse(generated.getIsResolved());
+        assertTrue(generated.getAlertMessage().contains("Pantalla LED"));
     }
 }

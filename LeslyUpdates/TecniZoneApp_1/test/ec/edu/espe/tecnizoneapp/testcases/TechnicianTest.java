@@ -1,6 +1,11 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
+ */
 package ec.edu.espe.tecnizoneapp.testcases;
 
 import ec.edu.espe.tecnizoneapp.model.Technician;
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -9,100 +14,79 @@ import static org.junit.Assert.*;
  * @author Lesly Muzo, CodeX3Team, @ESPE
  */
 public class TechnicianTest {
-    
-    public TechnicianTest() {
+
+    private Technician technician;
+
+    @Before
+    public void setUp() {
+        technician = new Technician("TEC-001", "Carlos Mena", "Laptops");
     }
 
     @Test
-    public void testTechnicianConstructorAndGetters() {
-
-        Technician tech = new Technician("TECH-001", "Carlos Mendoza", "Laptops y Hardware");
-        
-        assertEquals("TECH-001", tech.getTechnicianId());
-        assertEquals("Carlos Mendoza", tech.getFullName());
-        assertEquals("Laptops y Hardware", tech.getSpecialty());
+    public void testConstructorAndGetters() {
+        assertEquals("TEC-001", technician.getTechnicianId());
+        assertEquals("Carlos Mena", technician.getFullName());
+        assertEquals("Laptops", technician.getSpecialty());
     }
 
     @Test
-    public void testUpdateSpecialty_Success() {
-
-        Technician tech = new Technician("TECH-002", "Ana Torres", "Smartphones");
-        tech.updateSpecialty("Redes y Servidores");
-        
-        assertEquals("Redes y Servidores", tech.getSpecialty());
+    public void testSetTechnicianId() {
+        technician.setTechnicianId("TEC-002");
+        assertEquals("TEC-002", technician.getTechnicianId());
     }
 
     @Test
-    public void testAssignToOrder_ExecutionSuccess() {
+    public void testSetFullName() {
+        technician.setFullName("Luis Andrade");
+        assertEquals("Luis Andrade", technician.getFullName());
+    }
 
-        Technician tech = new Technician("TECH-003", "Luis Andrade", "Impresoras");
-        
+    @Test
+    public void testSetSpecialty() {
+        technician.setSpecialty("Smartphones");
+        assertEquals("Smartphones", technician.getSpecialty());
+    }
+
+    @Test
+    public void testUpdateSpecialty() {
+        technician.updateSpecialty("Impresoras");
+        assertEquals("Impresoras", technician.getSpecialty());
+    }
+
+    @Test
+    public void testUpdateSpecialtyKeepsOtherFields() {
+        technician.updateSpecialty("Impresoras");
+        assertEquals("TEC-001", technician.getTechnicianId());
+        assertEquals("Carlos Mena", technician.getFullName());
+    }
+
+    @Test
+    public void testAssignToOrderWithNullDoesNotThrow() {
         try {
-            tech.assignToOrder(new Object());
-            assertTrue(true);
+            technician.assignToOrder(null);
         } catch (Exception e) {
-            fail("El método assignToOrder no debería lanzar excepciones.");
+            fail("No debería lanzar excepción: " + e.getMessage());
         }
     }
 
     @Test
-    public void testSetFullName_Success() {
-
-        Technician tech = new Technician("TECH-004", "Jose Perez", "Audio");
-        tech.setFullName("Jose Luis Perez");
-        
-        assertEquals("Jose Luis Perez", tech.getFullName());
+    public void testAssignToOrderKeepsTechnicianData() {
+        technician.assignToOrder(new Object());
+        assertEquals("TEC-001", technician.getTechnicianId());
+        assertEquals("Carlos Mena", technician.getFullName());
+        assertEquals("Laptops", technician.getSpecialty());
     }
 
     @Test
-    public void testSetTechnicianId_Success() {
-
-        Technician tech = new Technician("TECH-005", "Maria Gomez", "Consolas");
-        tech.setTechnicianId("TECH-999");
-        
-        assertEquals("TECH-999", tech.getTechnicianId());
+    public void testToStringFormat() {
+        String result = technician.toString();
+        assertTrue(result.contains("TEC-001"));
+        assertTrue(result.contains("Carlos Mena"));
+        assertTrue(result.contains("Laptops"));
     }
 
     @Test
-    public void testTechnician_NotNullInstance() {
-
-        Technician tech = new Technician("TECH-006", "David Vera", "MacBooks");
-        
-        assertNotNull(tech);
-        assertNotNull(tech.getTechnicianId());
-    }
-
-    @Test
-    public void testTechnician_IdNotEqualsWrong() {
-
-        Technician tech = new Technician("TECH-007", "Sofia Ruiz", "Tablets");
-        
-        assertNotEquals("TECH-000", tech.getTechnicianId());
-    }
-
-    @Test
-    public void testToString_ContainsFullName() {
-
-        Technician tech = new Technician("TECH-008", "Esteban Quito", "Monitores");
-        String resultString = tech.toString();
-        
-        assertNotNull(resultString);
-        assertTrue(resultString.contains("Esteban Quito"));
-    }
-
-    @Test
-    public void testTechnician_IntentionalFailureSpecialty() {
-
-        Technician tech = new Technician("TECH-009", "Mateo Silva", "Redes");
-
-        assertEquals("Carpintería", tech.getSpecialty());
-    }
-
-    @Test
-    public void testTechnician_IntentionalFailureName() {
-
-        Technician tech = new Technician("TECH-010", "Valeria Mora", "Software");
-
-        assertEquals("Albert Einstein", tech.getFullName());
+    public void testFailingCaseSpecialty() {
+        assertEquals("Smartphones", technician.getSpecialty());
     }
 }
