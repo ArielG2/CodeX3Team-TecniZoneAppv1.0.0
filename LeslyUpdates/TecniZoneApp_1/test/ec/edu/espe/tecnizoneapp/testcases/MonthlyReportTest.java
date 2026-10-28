@@ -1,112 +1,91 @@
-package ec.edu.espe.tecnizoneapp.testcases;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
+ */
+package ec.edu.espe.tecnizoneapp.model;
 
-import ec.edu.espe.tecnizoneapp.model.MonthlyReport;
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
  *
- * @author Ariel Giler, CodeX3Team, @ESPE
+ * @author Lesly Muzo, CodeX3Team, @ESPE
  */
-
 public class MonthlyReportTest {
-    
-    public MonthlyReportTest() {
+
+    private MonthlyReport report;
+
+    @Before
+    public void setUp() {
+        report = new MonthlyReport("REP-001", "Octubre 2026", 12, 1500.5);
     }
 
-
     @Test
-    public void testMonthlyReportConstructorAndGetters() {
-
-        MonthlyReport report = new MonthlyReport("REP-001", "October 2026", 15, 1250.50);
-        
+    public void testConstructorAndGetters() {
         assertEquals("REP-001", report.getReportId());
-        assertEquals("October 2026", report.getMonthAndYear());
-        assertEquals(15, report.getTotalCompletedRepairs());
-        assertEquals(1250.50, report.getTotalMoneyCollected(), 0.01);
+        assertEquals("Octubre 2026", report.getMonthAndYear());
+        assertEquals(12, report.getTotalCompletedRepairs());
+        assertEquals(1500.5, report.getTotalMoneyCollected(), 0.001);
     }
 
     @Test
-    public void testSetReportId_Success() {
-
-        MonthlyReport report = new MonthlyReport("REP-002", "October 2026", 10, 800.0);
-        report.setReportId("REP-999");
-        
-        assertEquals("REP-999", report.getReportId());
+    public void testSetReportId() {
+        report.setReportId("REP-002");
+        assertEquals("REP-002", report.getReportId());
     }
 
     @Test
-    public void testSetMonthAndYear_Success() {
-
-        MonthlyReport report = new MonthlyReport("REP-003", "September 2026", 20, 1500.0);
-        report.setMonthAndYear("October 2026");
-        
-        assertEquals("October 2026", report.getMonthAndYear());
+    public void testSetMonthAndYear() {
+        report.setMonthAndYear("Noviembre 2026");
+        assertEquals("Noviembre 2026", report.getMonthAndYear());
     }
 
     @Test
-    public void testCompileMonthlyData_Success() {
+    public void testSetTotalCompletedRepairs() {
+        report.setTotalCompletedRepairs(20);
+        assertEquals(20, report.getTotalCompletedRepairs());
+    }
 
-        MonthlyReport report = new MonthlyReport("REP-004", "Old", 5, 300.0);
-        report.compileMonthlyData("November", 2026);
-        
-        assertEquals("November 2026", report.getMonthAndYear());
+    @Test
+    public void testSetTotalMoneyCollected() {
+        report.setTotalMoneyCollected(2300.75);
+        assertEquals(2300.75, report.getTotalMoneyCollected(), 0.001);
+    }
+
+    @Test
+    public void testCompileMonthlyDataUpdatesFields() {
+        report.compileMonthlyData("Noviembre", 2026);
+        assertEquals("Noviembre 2026", report.getMonthAndYear());
         assertEquals(0, report.getTotalCompletedRepairs());
-        assertEquals(0.0, report.getTotalMoneyCollected(), 0.01);
+        assertEquals(0.0, report.getTotalMoneyCollected(), 0.001);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testCompileMonthlyDataInvalidMonthThrowsException() {
+        report.compileMonthlyData("   ", 2026);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testCompileMonthlyDataInvalidYearThrowsException() {
+        report.compileMonthlyData("Octubre", 0);
     }
 
     @Test
-    public void testExportToText_Success() {
-
-        MonthlyReport report = new MonthlyReport("REP-005", "October 2026", 8, 950.0);
-        String exportedText = report.exportToText();
-        
-        assertNotNull(exportedText);
-        assertTrue(exportedText.contains("REP-005"));
+    public void testExportToText() {
+        String text = report.exportToText();
+        assertTrue(text.contains("ID Del Reporte: REP-001"));
+        assertTrue(text.contains("Mes y Anio: Octubre 2026"));
+        assertTrue(text.contains("Reparaciones Completadas: 12"));
+        assertTrue(text.contains("Dinero Recolectado: $1500.5"));
     }
 
     @Test
-    public void testSetTotals_Success() {
-
-        MonthlyReport report = new MonthlyReport("REP-006", "October 2026", 1, 100.0);
-        report.setTotalCompletedRepairs(25);
-        report.setTotalMoneyCollected(3400.0);
-        
-        assertEquals(25, report.getTotalCompletedRepairs());
-        assertEquals(3400.0, report.getTotalMoneyCollected(), 0.01);
-    }
-
-    @Test
-    public void testMonthlyReport_ObjectNotNull() {
-
-        MonthlyReport report = new MonthlyReport("REP-007", "October 2026", 12, 1100.0);
-        
-        assertNotNull(report);
-        assertNotNull(report.getReportId());
-    }
-
-    @Test
-    public void testMonthlyReport_IdNotEqualsWrong() {
-
-        MonthlyReport report = new MonthlyReport("REP-008", "October 2026", 5, 450.0);
-        
-        assertNotEquals("REP-000", report.getReportId());
-    }
-
-    @Test
-    public void testMonthlyReport_IntentionalFailureMoney() {
-
-        MonthlyReport report = new MonthlyReport("REP-009", "October 2026", 10, 2000.0);
-        
-
-        assertEquals(9999.0, report.getTotalMoneyCollected(), 0.01);
-    }
-
-    @Test
-    public void testMonthlyReport_IntentionalFailureRepairs() {
-        System.out.println("Falla 2: Esperar una cantidad de reparaciones incorrecta para forzar error");
-        MonthlyReport report = new MonthlyReport("REP-010", "October 2026", 14, 1400.0);
-
-        assertEquals(50, report.getTotalCompletedRepairs());
+    public void testToStringFormat() {
+        String result = report.toString();
+        assertTrue(result.contains("REP-001"));
+        assertTrue(result.contains("Octubre 2026"));
+        assertTrue(result.contains("12"));
+        assertTrue(result.contains("1500.5"));
     }
 }
