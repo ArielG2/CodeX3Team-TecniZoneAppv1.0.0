@@ -20,7 +20,7 @@ public class BillingController {
     }
 
     public void generateInvoice(ArrayList<RepairOrder> orders) {
-        System.out.print("Número de orden a facturar: ");
+        System.out.print("Numero de orden a facturar: ");
         String num = scanner.nextLine();
         RepairOrder o = serviceController.findOrder(orders, num);
         if (o != null) {

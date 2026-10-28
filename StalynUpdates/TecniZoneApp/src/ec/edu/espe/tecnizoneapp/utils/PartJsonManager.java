@@ -2,6 +2,7 @@ package ec.edu.espe.tecnizoneapp.utils;
 
 import ec.edu.espe.tecnizoneapp.model.Part;
 import org.json.JSONObject;
+import java.io.File;
 import java.io.FileWriter;
 
 /**
@@ -11,14 +12,21 @@ import java.io.FileWriter;
 public class PartJsonManager {
 
     public static void save(Part part) {
+        JSONObject json = new JSONObject();
+        json.put("code", part.getCode());
+        json.put("name", part.getName());
+        json.put("currentStock", part.getCurrentStock());
+        json.put("minStock", part.getMinStock());
+        json.put("price", part.getPrice());
 
-        JSONObject json = new JSONObject(part);
+        File fileObj = new File("C:\\Users\\Mateo\\Documents\\ObjectOrientedProgramming\\CodeX3Team-TecniZoneAppv1.0.0\\StalynUpdates\\TecniZoneApp\\parts.json");
 
-        try (FileWriter file = new FileWriter("parts.json", true)) {
+        try (FileWriter file = new FileWriter(fileObj, true)) {
             file.write(json.toString() + "\n");
-            System.out.println(">> Repuesto guardado en parts.json");
+            file.flush();
+            System.out.println(">> Repuesto guardado en: " + fileObj.getAbsolutePath());
         } catch (Exception e) {
-            System.out.println(">> Error al guardar: " + e.getMessage());
+            System.out.println(">> Error al guardar repuesto: " + e.getMessage());
         }
     }
 }

@@ -2,6 +2,7 @@ package ec.edu.espe.tecnizoneapp.utils;
 
 import ec.edu.espe.tecnizoneapp.model.Technician;
 import org.json.JSONObject;
+import java.io.File;
 import java.io.FileWriter;
 
 /**
@@ -11,14 +12,18 @@ import java.io.FileWriter;
 public class TechnicianJsonManager {
 
     public static void save(Technician technician) {
+        JSONObject json = new JSONObject();
+        json.put("technicianId", technician.getTechnicianId());
+        json.put("fullName", technician.getFullName());
+        json.put("specialty", technician.getSpecialty());
 
-        JSONObject json = new JSONObject(technician);
+        File fileObj = new File("C:\\Users\\Mateo\\Documents\\ObjectOrientedProgramming\\CodeX3Team-TecniZoneAppv1.0.0\\StalynUpdates\\TecniZoneApp\\technicians.json");
 
-        try (FileWriter file = new FileWriter("technicians.json", true)) {
+        try (FileWriter file = new FileWriter(fileObj, true)) {
             file.write(json.toString() + "\n");
-            System.out.println(">> Técnico guardado en technicians.json");
+            file.flush();
         } catch (Exception e) {
-            System.out.println(">> Error al guardar: " + e.getMessage());
+            System.out.println(">> Error al guardar técnico: " + e.getMessage());
         }
     }
 }
