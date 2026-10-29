@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/SystemUserTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/ClientTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/EquipmentTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/OrderPartDetailTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/InvoiceTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/RepairOrderTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/StatusLogTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/WarrantyChecklistTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/PartTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/src/ec/edu/espe/tecnizoneapp/model/DirectSale.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/DirectSaleTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/src/ec/edu/espe/tecnizoneapp/model/MonthlyReport.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/MonthlyReportTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/src/ec/edu/espe/tecnizoneapp/model/ServiceCatalog.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/ServiceCatalogTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/src/ec/edu/espe/tecnizoneapp/model/StockAlert.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/StockAlertTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/SupplierTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/src/ec/edu/espe/tecnizoneapp/model/Supplier.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/src/ec/edu/espe/tecnizoneapp/model/Technician.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/test/ec/edu/espe/tecnizoneapp/model/TechnicianTest.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/src/ec/edu/espe/tecnizoneapp/utils/ClientJsonManager.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/src/ec/edu/espe/tecnizoneapp/utils/DirectSaleJsonManager.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/src/ec/edu/espe/tecnizoneapp/utils/EquipmentJsonManager.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/src/ec/edu/espe/tecnizoneapp/utils/InvoiceJsonManager.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/src/ec/edu/espe/tecnizoneapp/utils/MonthlyReportCsvManager.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/src/ec/edu/espe/tecnizoneapp/utils/OrderPartDetailJsonManager.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/src/ec/edu/espe/tecnizoneapp/utils/StatusLogCsvManager.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/src/ec/edu/espe/tecnizoneapp/utils/StockAlertCsvManager.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/src/ec/edu/espe/tecnizoneapp/utils/SupplierJsonManager.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/src/ec/edu/espe/tecnizoneapp/utils/SystemUserJsonManager.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/src/ec/edu/espe/tecnizoneapp/utils/TechnicianJsonManager.java</file>
+            <file>file:/C:/Users/ARIEL/OneDrive/Escritorio/proyecto/CodeX3Team-TecniZoneAppv1.0.0/StalynUpdates/TecniZoneApp/src/ec/edu/espe/tecnizoneapp/utils/WarrantyChecklistJsonManager.java</file>
+        </group>
+    </open-files>
+</project-private>
