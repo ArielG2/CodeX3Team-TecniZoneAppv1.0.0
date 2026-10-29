@@ -1,3 +1,0 @@
-logId,orderNumber,statusChangedTo,changeTimestamp,changedByUser
-LOG-1793151046803,ORD-001,En reparacion,Tue Oct 27 20:30:46 GMT-05:00 2026,admin
-LOG-1793154214327,ORD-002,Listo,Tue Oct 27 21:23:34 GMT-05:00 2026,admin
