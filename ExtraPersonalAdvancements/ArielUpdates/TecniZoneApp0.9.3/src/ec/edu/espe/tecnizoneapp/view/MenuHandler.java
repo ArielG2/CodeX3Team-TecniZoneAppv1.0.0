@@ -22,6 +22,13 @@ public class MenuHandler {
         do {
             showMainMenu();
             option = readInt();
+      
+            while (option < 1 || option > 11) {
+                System.out.println(">> Opcion invalida. Por favor, ingrese un numero entre 1 y 11.");
+                System.out.print("Seleccione una opcion: ");
+                option = readInt();
+            }
+            
             processOption(option);
         } while (option != 11);
     }

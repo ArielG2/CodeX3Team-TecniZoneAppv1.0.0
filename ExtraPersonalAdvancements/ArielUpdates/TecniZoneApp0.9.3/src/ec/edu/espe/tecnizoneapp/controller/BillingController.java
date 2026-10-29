@@ -23,10 +23,15 @@ public class BillingController {
         System.out.print("Numero de orden a facturar: ");
         String num = scanner.nextLine();
         RepairOrder o = serviceController.findOrder(orders, num);
+        
         if (o != null) {
-            Invoice inv = new Invoice("INV-" + num, o, LocalDateTime.now(), 120.00, "Pagado");
+          
+            System.out.print("Ingrese el total a facturar ($): ");
+            double total = Double.parseDouble(scanner.nextLine());
+
+            Invoice inv = new Invoice("INV-" + num, o, LocalDateTime.now(), total, "Pagado");
             InvoiceJsonManager.save(inv);
-            System.out.println(">> Factura INV-" + num + " generada exitosamente.");
+            System.out.println(">> Factura INV-" + num + " generada exitosamente con un total de $" + total);
         } else {
             System.out.println(">> Orden no encontrada.");
         }

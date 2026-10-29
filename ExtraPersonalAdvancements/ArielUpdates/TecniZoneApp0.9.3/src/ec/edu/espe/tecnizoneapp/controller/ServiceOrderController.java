@@ -128,6 +128,7 @@ public class ServiceOrderController {
             return;
         }
         for (RepairOrder o : orders) {
+            // Muestra la orden junto con su estado actual de forma limpia y directa
             System.out.println("- Orden: " + o.getOrderNumber() + " | Estado: " + o.getCurrentStatus());
         }
     }
