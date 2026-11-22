@@ -1,8 +1,15 @@
+
 package ec.edu.espe.tecnizoneapp.controller;
 
 import ec.edu.espe.tecnizoneapp.model.*;
 import ec.edu.espe.tecnizoneapp.utils.CsvManager;
 import ec.edu.espe.tecnizoneapp.utils.JsonManager;
+import ec.edu.espe.tecnizoneapp.utils.MongoDBConnection;
+
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.ReplaceOptions;
+import org.bson.Document;
 
 import java.io.File;
 import java.io.PrintWriter;
@@ -11,9 +18,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
+import static com.mongodb.client.model.Filters.eq;
+
 /**
  *
- * @author Stalyn Guerrero, CodeX3Team, @ESPE
+ * @author Lesly Muzo, CodeX3Team, @ESPE
  */
 public class DataPersistController {
 
@@ -51,7 +60,20 @@ public class DataPersistController {
     private final CsvManager<StockAlert> stockAlertCsvManager = new CsvManager<>("stockAlerts.csv");
 
     public void loadClients(ArrayList<Client> clients) {
-        clients.addAll(clientManager.loadAll());
+        MongoCollection<Document> collection = MongoDBConnection.getDatabase()
+                .getCollection("clients");
+
+        for (Document doc : collection.find()) {
+            Client client = new Client(
+                    doc.getString("clientId"),
+                    doc.getString("fullName"),
+                    doc.getString("phoneNumber")
+            );
+
+            clients.add(client);
+        }
+
+        System.out.println(">> Clientes cargados desde MongoDB.");
     }
 
     public void loadParts(ArrayList<Part> parts) {
@@ -81,8 +103,48 @@ public class DataPersistController {
         orders.addAll(loader.loadAll());
     }
 
-    public void saveClient(Client client) { clientManager.save(client); }
-    public void overwriteClients(List<Client> clients) { clientManager.saveAll(clients); }
+    public void saveClient(Client client) {
+        clientManager.save(client);
+
+        MongoDatabase database = MongoDBConnection.getDatabase();
+        MongoCollection<Document> collection = database.getCollection("clients");
+
+        Document document = new Document()
+                .append("clientId", client.getClientId())
+                .append("fullName", client.getFullName())
+                .append("phoneNumber", client.getPhoneNumber());
+
+        collection.replaceOne(
+                eq("clientId", client.getClientId()),
+                document,
+                new ReplaceOptions().upsert(true)
+        );
+
+        System.out.println(">> Cliente guardado en MongoDB correctamente.");
+    }
+
+    public void overwriteClients(List<Client> clients) {
+        clientManager.saveAll(clients);
+
+        MongoCollection<Document> collection = MongoDBConnection.getDatabase()
+                .getCollection("clients");
+
+        List<String> clientIds = new ArrayList<>();
+
+        for (Client client : clients) {
+            clientIds.add(client.getClientId());
+        }
+
+        if (clientIds.isEmpty()) {
+            collection.deleteMany(new Document());
+        } else {
+            collection.deleteMany(
+                    new Document("clientId", new Document("$nin", clientIds))
+            );
+        }
+
+        System.out.println(">> Clientes actualizados en MongoDB correctamente.");
+    }
 
     public void savePart(Part part) { partManager.save(part); }
     public void overwriteParts(List<Part> parts) { partManager.saveAll(parts); }
