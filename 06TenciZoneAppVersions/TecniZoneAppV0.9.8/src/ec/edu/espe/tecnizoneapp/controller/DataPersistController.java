@@ -149,7 +149,45 @@ public class DataPersistController {
     public void savePart(Part part) { partManager.save(part); }
     public void overwriteParts(List<Part> parts) { partManager.saveAll(parts); }
 
-    public void saveEquipment(Equipment equipment) { equipmentManager.save(equipment); }
+    
+public void saveEquipment(Equipment equipment) {
+    
+    equipmentManager.save(equipment);
+
+    
+    MongoDatabase database = MongoDBConnection.getDatabase();
+
+    
+    MongoCollection<Document> collection =
+            database.getCollection("equipments");
+
+    
+    Document document = new Document()
+            .append("serialNumber", equipment.getSerialNumber())
+            .append("deviceType", equipment.getDeviceType())
+            .append("brand", equipment.getBrand())
+            .append("model", equipment.getModel())
+            .append("reportedFaults", equipment.getReportedFaults());
+
+    
+    if (equipment.getOwnerClient() != null) {
+        document.append(
+                "ownerClientId",
+                equipment.getOwnerClient().getClientId()
+        );
+    }
+
+    
+    collection.replaceOne(
+            eq("serialNumber", equipment.getSerialNumber()),
+            document,
+            new ReplaceOptions().upsert(true)
+    );
+
+    System.out.println(
+            ">> Equipo guardado en MongoDB correctamente."
+    );
+}
 
     public void saveRepairOrder(RepairOrder order) { repairOrderManager.save(order); }
     public void overwriteRepairOrders(List<RepairOrder> orders) { repairOrderManager.saveAll(orders); }
