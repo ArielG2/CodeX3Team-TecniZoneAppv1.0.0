@@ -1,0 +1,81 @@
+package ec.edu.espe.tecnizoneapp.model;
+
+import ec.edu.espe.tecnizoneapp.utils.JsonSerializable;
+import org.json.JSONObject;
+
+/**
+ *
+ * @author Lesly Muzo, CodeX3Team, @ESPE
+ */
+public class Supplier implements JsonSerializable {
+    private String supplierId;
+    private String companyName;
+    private String contactPhone;
+
+    public Supplier(String supplierId, String companyName, String contactPhone) {
+        this.supplierId = supplierId;
+        this.companyName = companyName;
+        this.contactPhone = contactPhone;
+    }
+
+    @Override
+    public String toString() {
+        return "Supplier{" + "supplierId=" + getSupplierId() + ", companyName=" + getCompanyName() + ", contactPhone=" + getContactPhone() + '}';
+    }
+
+    /**
+     * @return the supplierId
+     */
+    public String getSupplierId() {
+        return supplierId;
+    }
+
+    /**
+     * @param supplierId the supplierId to set
+     */
+    public void setSupplierId(String supplierId) {
+        this.supplierId = supplierId;
+    }
+
+    /**
+     * @return the companyName
+     */
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    /**
+     * @param companyName the companyName to set
+     */
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    /**
+     * @return the contactPhone
+     */
+    public String getContactPhone() {
+        return contactPhone;
+    }
+
+    /**
+     * @param contactPhone the contactPhone to set
+     */
+    public void setContactPhone(String contactPhone) {
+        this.contactPhone = contactPhone;
+    }
+
+    public void orderParts(Part partNeeded, int quantity) {
+        System.out.println("Solicitando " + quantity + " unidades de la pieza: " + 
+                          partNeeded.getName() + " al proveedor " + this.companyName);
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("supplierId", this.supplierId);
+        json.put("companyName", this.companyName);
+        json.put("contactPhone", this.contactPhone);
+        return json;
+    }
+}
